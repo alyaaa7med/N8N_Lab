@@ -154,7 +154,6 @@ Here are the names of all the nodes in your workflow:
 
 <img src="images/Screenshot (149).png"  width="600">
 
-`You Can Check the N8N workflow from this link to check each node settings and what actually it is doing.`
 ---
 ### N8N Demo
 ---
