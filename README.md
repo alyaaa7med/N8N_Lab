@@ -83,7 +83,8 @@ The summarized transcript is automatically sent to all participants via Gmail.
 grant_type=client_credentials <br/>
 account_id: your one<br/>
 We will got the response with access token 
-<img src="images/Screenshot (130).png"  width="600">
+<img src="images/Screenshot (130).png"  width="600"> 
+<br>
 this access token will be used here: 
 `GET https://api.zoom.us/v2/past_meetings/{meetingUUID}/participants`
 
@@ -99,14 +100,15 @@ I received my GPT-4o API key from ITI
 ### 4. Gmail Credentials
 
 **How to get:**  
-How to get:
-Go to Google Cloud Console <br>
-Create an OAuth 2.0 Client<br>
-Choose Desktop App<br>
-Copy the Client ID and Client Secret<br>
-Login to your Gmail account to authorize sending emails.<br>
+1. How to get:
+2. Go to Google Cloud Console <br>
+3. Create an OAuth 2.0 Client<br>
+4. Choose Desktop App<br>
+5. Copy the Client ID and Client Secret<br>
+6. Login to your Gmail account to authorize sending emails.<br>
 `OR more easier way From N8N Gmail node `<br>
 <img src="images/gmailcred.JPG"  width="600">
+<br>
 then, Login to your Gmail account to authorize sending emails.
 
 ---
@@ -161,7 +163,7 @@ Here are the names of all the nodes in your workflow:
 
 ### Resources 
 
-[I Highly recommend This Playlist](https://https://youtu.be/FBID4TaQ6OE?si=EOUknRr_SNOm1gtN)
+[I Highly recommend This Playlist ](https://youtu.be/FBID4TaQ6OE?si=EOUknRr_SNOm1gtN)
 ---
 
 
