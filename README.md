@@ -117,45 +117,36 @@ Here are the names of all the nodes in your workflow:
 ### 1. When Transcripting From Fireflies 
 - Webhook node that receives data from fireflies
 <img src="images/Screenshot (138).png"  width="600">
----
-<br>
 ### 2. Format The JSON Data
 - Code node that formats the speech array into a readable transcript
 <img src="images/Screenshot (139).png"  width="600">
----
-<br>
+
 
 ### 3. Model For Summarizing (GPT-4o) 
 - HTTP Request node that calls OpenAI API to summarize
 <img src="images/Screenshot (140).png"  width="600">
 <img src="images/Screenshot (141).png"  width="600"><img src="images/Screenshot (142).png"  width="600">
----
-<br>
+
 ### 4. Node For Emails (Instead of Paid Account) 
 - Set node with hardcoded participant emails
 <img src="images/Screenshot (145).png"  width="600">
----
-<br>
 
 ### 5. Loop Over Emails  
 - Split in Batches node to process participants one by one
 `Batch Size = 10`
----
-<br>
+
 
 ### 6. Flatten Object JSON 
 - Code node that combines summary with each participant
 <img src="images/Screenshot (146).png"  width="600">
 <img src="images/Screenshot (147).png"  width="600">
----
-<br>
+
 
 ### 7. Send a Message of Summary For All Participants  
 - Gmail node that sends emails
 <img src="images/Screenshot (148).png"  width="600">
 
----
-<br>
+
 
 ### 8. Get All Participants Of The Meeting 
 - HTTP Request node for Zoom API (not connected in my flow)
