@@ -1,8 +1,8 @@
-# Zoom And FileFire Transcript Summarization & Email Workflow
+#  Zoom And [fireflies](http://fireflies.ai/) Transcript Summarization & Email Workflow
 
 ## Workflow Overview
 
-- **Captures Zoom meetings** via FileFire  
+- **Captures Zoom meetings** via fireflies  
 - **Fetches meeting participants** from Zoom  
 - **Summarizes the transcript** using GPT-4o  
 - **Sends the summary** to all participants via Gmail  
@@ -20,12 +20,12 @@ We need the **Meeting Link** and the **Meeting ID**.
 
 ---
 
-### 2. Capture the Meeting with FileFire
-Give FileFire access to enter the meeting using the **Meeting Link**.  
+### 2. Capture the Meeting with fireflies
+Give fireflies access to enter the meeting using the **Meeting Link**.  
 
-<img src="images/Screenshot (125).png" alt="FileFire Access" width="600">  
-<img src="images/Screenshot (126).png" alt="FileFire Enter Meeting" width="600">  
-*FileFire automatically joins the meeting to record the transcript.*
+<img src="images/Screenshot (125).png" alt="fireflies Access" width="600">  
+<img src="images/Screenshot (126).png" alt="fireflies Enter Meeting" width="600">  
+*fireflies automatically joins the meeting to record the transcript.*
 
 ---
 
@@ -47,9 +47,9 @@ The summarized transcript is automatically sent to all participants via Gmail.
 
 ## Needed Credintionals
  
-### 1. FileFire
+### 1. fireflies
 **How to get it:**
-1. Log in to your FileFire dashboard.  
+1. Log in to your fireflies.ai dashboard.  
 2. Navigate to `Settings → Developer Settings`.  
 3. Add the N8N Webhook credentials.
 <img src="images/web.JPG"  width="600">
@@ -117,7 +117,7 @@ then, Login to your Gmail account to authorize sending emails.
 Here are the names of all the nodes in your workflow:
 
 ### 1. When Transcripting From Fireflies 
-- Webhook node that receives data from Fireflies
+- Webhook node that receives data from fireflies
 <img src="images/Screenshot (138).png"  width="600">
 
 
