@@ -1,4 +1,4 @@
-#  Zoom And [fireflies](http://fireflies.ai/) Transcript Summarization & Email Workflow
+#  Zoom And [Fireflies](http://fireflies.ai/) Transcript Summarization & Email Workflow
 
 ## Workflow Overview
 
@@ -58,11 +58,9 @@ The summarized transcript is automatically sent to all participants via Gmail.
 
 ### 2. Zoom
 
-**Required Info:
-**Needed For getting the Participants in Zoom meeting so that i can send them an email **
-
+**Required Info:**
+**Needed For getting the Participants in Zoom meeting so that i can send them an email**
 <br>
-
 - Zoom account login  
 - Server-to-Server OAuth app credentials:  
   - Account ID  
@@ -70,7 +68,7 @@ The summarized transcript is automatically sent to all participants via Gmail.
   - Client Secret  
   - Access Token (generated via OAuth)
 
-**we can got the participants from the endpoint: but it is only for paid ZOOM accounts **
+**we can got the participants from the endpoint: but it is only for paid ZOOM accounts**
 
 **How to get keys :**
 1. Go to [Zoom App Marketplace](https://marketplace.zoom.us/)  
@@ -112,43 +110,42 @@ I received my GPT-4o API key from ITI
 then, Login to your Gmail account to authorize sending emails.
 
 ---
-## Workflow Nodes
 
+## Workflow Nodes
 Here are the names of all the nodes in your workflow:
 
 ### 1. When Transcripting From Fireflies 
 - Webhook node that receives data from fireflies
 <img src="images/Screenshot (138).png"  width="600">
-
-
+---
 ### 2. Format The JSON Data
 - Code node that formats the speech array into a readable transcript
 <img src="images/Screenshot (139).png"  width="600">
-
+---
 ### 3. Model For Summarizing (GPT-4o) 
 - HTTP Request node that calls OpenAI API to summarize
 <img src="images/Screenshot (140).png"  width="600">
 <img src="images/Screenshot (141).png"  width="600"><img src="images/Screenshot (142).png"  width="600">
-
+---
 ### 4. Node For Emails (Instead of Paid Account) 
 - Set node with hardcoded participant emails
 <img src="images/Screenshot (145).png"  width="600">
-
+---
 ### 5. Loop Over Emails  
 - Split in Batches node to process participants one by one
 `Batch Size = 10`
-
+---
 ### 6. Flatten Object JSON 
 - Code node that combines summary with each participant
 <img src="images/Screenshot (146).png"  width="600">
 <img src="images/Screenshot (147).png"  width="600">
-
+---
 
 ### 7. Send a Message of Summary For All Participants  
 - Gmail node that sends emails
 <img src="images/Screenshot (148).png"  width="600">
 
-
+---
 ### 8. Get All Participants Of The Meeting 
 - HTTP Request node for Zoom API (not connected in my flow)
 
