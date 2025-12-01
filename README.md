@@ -81,11 +81,11 @@ The summarized transcript is automatically sent to all participants via Gmail.
 
 `POST https://zoom.us/oauth/token`
 grant_type=client_credentials <br/>
-account_id: your one<br/>
-We will got the response with access token 
+account_id: your one<br>
+We will got the response with access token<br> 
 <img src="images/Screenshot (130).png"  width="600"> 
-<br>
 this access token will be used here: 
+<br>
 `GET https://api.zoom.us/v2/past_meetings/{meetingUUID}/participants`
 
 `Note: For my free trail account i put testing data for participants manually in N8N workflow` 
