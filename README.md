@@ -1,4 +1,4 @@
-# Zoom + FileFire Transcript Summarization & Email Workflow
+# Zoom And FileFire Transcript Summarization & Email Workflow
 
 ## Workflow Overview
 
@@ -41,12 +41,13 @@ After the meeting finishes, the transcript is sent to **n8n**, triggering the wo
 The summarized transcript is automatically sent to all participants via Gmail.  
 
 <img src="images/email.JPG" alt="Gmail Summary" width="600">  
-*Example of the summary email received by participants.*
+*Example of the summary email received by participants.* 
+
 ---
 
 ## Needed Credintionals
  
-## 1️⃣ FileFire
+### 1. FileFire
 **How to get it:**
 1. Log in to your FileFire dashboard.  
 2. Navigate to `Settings → Developer Settings`.  
@@ -55,7 +56,7 @@ The summarized transcript is automatically sent to all participants via Gmail.
 
 ---
 
-## 2️⃣ Zoom
+### 2. Zoom
 
 **Required Info:
 **Needed For getting the Participants in Zoom meeting so that i can send them an email **
@@ -69,7 +70,7 @@ The summarized transcript is automatically sent to all participants via Gmail.
   - Client Secret  
   - Access Token (generated via OAuth)
 
-**we can got the participants from the endpoint:    only for paid ZOOM accounts **
+**we can got the participants from the endpoint: but it is only for paid ZOOM accounts **
 
 **How to get keys :**
 1. Go to [Zoom App Marketplace](https://marketplace.zoom.us/)  
@@ -78,64 +79,90 @@ The summarized transcript is automatically sent to all participants via Gmail.
 4. Copy the **Account ID**, **Client ID**, and **Client Secret**.  
 5. Use these to generate an Access Token via the Zoom OAuth endpoint:
 
-POST https://zoom.us/oauth/token
-grant_type=client_credentials
-account_id: your one
+`POST https://zoom.us/oauth/token`
+grant_type=client_credentials <br/>
+account_id: your one<br/>
 We will got the response with access token 
 <img src="images/Screenshot (130).png"  width="600">
 this access token will be used here: 
-GET https://api.zoom.us/v2/past_meetings/{meetingUUID}/participants
+`GET https://api.zoom.us/v2/past_meetings/{meetingUUID}/participants`
+
+`Note: For my free trail account i put testing data for participants manually in N8N workflow` 
 ---
-### 3️⃣ OpenAI GPT-4o Credentials
+### 3.  OpenAI GPT-4o Credentials
 
 **How to get:**  
-I received your GPT-4o API key from ITI  
+I received my GPT-4o API key from ITI  
 
 ---
 
-### 4️⃣ Gmail Credentials
+### 4. Gmail Credentials
 
 **How to get:**  
-Go to **Google Cloud Console**  
-Create an **OAuth 2.0 Client**  
-Choose **Desktop App**  
-Copy the **Client ID** and **Client Secret**  
-<!-- In **n8n Gmail Node**, connect via **OAuth2** using these credentials   -->
-Login to your Gmail account to authorize sending emails
+How to get:
+Go to Google Cloud Console <br>
+Create an OAuth 2.0 Client<br>
+Choose Desktop App<br>
+Copy the Client ID and Client Secret<br>
+Login to your Gmail account to authorize sending emails.<br>
+`OR more easier way From N8N Gmail node `<br>
+<img src="images/gmailcred.JPG"  width="600">
+then, Login to your Gmail account to authorize sending emails.
 
+---
 ## Workflow Nodes
 
 Here are the names of all the nodes in your workflow:
 
-1️⃣ **When Transcripting From Fireflies**  
+### 1. When Transcripting From Fireflies 
 - Webhook node that receives data from Fireflies
+<img src="images/Screenshot (138).png"  width="600">
 
-2️⃣ **Format The JSON Data**  
+
+### 2. Format The JSON Data
 - Code node that formats the speech array into a readable transcript
+<img src="images/Screenshot (139).png"  width="600">
 
-3️⃣ **Model For Summarizing (GPT-4o)**  
+### 3. Model For Summarizing (GPT-4o) 
 - HTTP Request node that calls OpenAI API to summarize
+<img src="images/Screenshot (140).png"  width="600">
+<img src="images/Screenshot (141).png"  width="600"><img src="images/Screenshot (142).png"  width="600">
 
-4️⃣ **Node For Emails (Instead of Paid Account)**  
+### 4. Node For Emails (Instead of Paid Account) 
 - Set node with hardcoded participant emails
+<img src="images/Screenshot (145).png"  width="600">
 
-5️⃣ **Loop Over Emails**  
+### 5. Loop Over Emails  
 - Split in Batches node to process participants one by one
+`Batch Size = 10`
 
-6️⃣ **Flatten Object JSON**  
+### 6. Flatten Object JSON 
 - Code node that combines summary with each participant
+<img src="images/Screenshot (146).png"  width="600">
+<img src="images/Screenshot (147).png"  width="600">
 
-7️⃣ **Send a Message of Summary For All Participants**  
+
+### 7. Send a Message of Summary For All Participants  
 - Gmail node that sends emails
+<img src="images/Screenshot (148).png"  width="600">
 
-8️⃣ **Get All Participants Of The Meeting**  
-- HTTP Request node for Zoom API (not connected)
+
+### 8. Get All Participants Of The Meeting 
+- HTTP Request node for Zoom API (not connected in my flow)
+
+<img src="images/Screenshot (149).png"  width="600">
 
 `You Can Check the N8N workflow from this link to check each node settings and what actually it is doing.`
-
+---
 ### N8N Demo
 ---
 [Watch the full N8N workflow video on Google Drive](https://drive.google.com/drive/folders/1Z4Y-8nwu3kmxxiyzNmqDnHqTWnn1HbI-?usp=sharing)
+---
+
+### Resources 
+
+[I Highly recommend This Playlist](https://https://youtu.be/FBID4TaQ6OE?si=EOUknRr_SNOm1gtN)
+---
 
 
 
