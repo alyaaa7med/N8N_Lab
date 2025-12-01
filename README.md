@@ -117,6 +117,8 @@ Here are the names of all the nodes in your workflow:
 ### 1. When Transcripting From Fireflies 
 - Webhook node that receives data from fireflies
 <img src="images/Screenshot (138).png"  width="600">
+
+
 ### 2. Format The JSON Data
 - Code node that formats the speech array into a readable transcript
 <img src="images/Screenshot (139).png"  width="600">
